@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>基于hexo和butterfly搭建于github的Blog</title>
+    <url>/2022/02/16/CreateBlog/</url>
+    <content><![CDATA[<h1>基于hexo和butterfly搭建于github的Blog</h1>
+<p>照搬下文，如果遇到不会就参考以下视频<br>
+<a href="https://www.bilibili.com/video/BV1mU4y1j72n?spm_id_from=333.1007.top_right_bar_window_custom_collection.content.click">https://www.bilibili.com/video/BV1mU4y1j72n?spm_id_from=333.1007.top_right_bar_window_custom_collection.content.click</a></p>
+<h2 id="node-js环境配置">node.js环境配置</h2>
+<p>由hexo编写语言所决定，node.js突破了js只能写前端的障碍，实现了后端的编写<br>
+首先要到官网下载对应系统的安装包，下载后下一步下一步就行了，就是要注意环境变量要配上去，下完后不要随意该文件夹名字环境变量容易找不到路径<br>
+官网:<a href="https://nodejs.org/zh-cn/download/">https://nodejs.org/zh-cn/download/</a></p>
+<h2 id="下载git并且拥有一个github账号">下载git并且拥有一个github账号</h2>
+<p>github仓库容量有限，省着点用，能不用大图片就不用，能省一笔算一笔，可以用url链接图片只要对方不倒台，就能一直用用git指令拉代码。<br>
+github官网:<a href="https://github.com/">https://github.com/</a><br>
+git官网:<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
+<h2 id="下载hexo">下载hexo</h2>
+<p>用win+r的命令行敲，在命令窗口用指令安装，还能直接安装全局变量，就不用上官网上下载了</p>
+<h2 id="下载butterfly">下载butterfly</h2>
+<p>用管理员身份打开git push进入选中要指定为存储Blog的文件夹进行hexo配置，也要用git进行github登录，在用npm install命令安装一些必要的包，再git clone Butterfly的主题，主题拉出来了按照官网手册进行一系列配置。<br>
+hexo官网:<a href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a><br>
+butterfly官网:<a href="https://butterfly.js.org/%E7%85%A7%E7%9D%80%E6%85%A2%E6%85%A2%E9%85%8D%E5%B0%B1%E6%98%AF%E4%BA%86%E3%80%82">https://butterfly.js.org/照着慢慢配就是了。</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>资源整理合计(持续更新)</title>
+    <url>/2022/02/16/ResourceCollection/</url>
+    <content><![CDATA[<h1>资源整理合计(持续更新)</h1>
+<h3 id="电影，动漫，音乐…">电影，动漫，音乐…</h3>
+<ul>
+<li><a href="https://axutongxue.com/">https://axutongxue.com/</a><br>
+酷狗概念版会员免费，歌单随便下载</li>
+</ul>
+<h3 id="Science-Internet">Science Internet</h3>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">https:<span class="comment">//ikuuu.co/auth/login</span></span><br></pre></td></tr></tbody></table></figure>
+<p>白嫖日本站点，三月不登陆账号会注销，会有邮件提示</p>
+<h3 id="图标库">图标库</h3>
+<ul>
+<li><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></li>
+</ul>
+<h3 id="高清壁纸，图片素材库">高清壁纸，图片素材库</h3>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">https:<span class="comment">//blog.csdn.net/weixin_43852094/article/details/112276601?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522164502163416780271557379%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=164502163416780271557379&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-112276601.first_rank_v2_pc_rank_v29&amp;utm_term=%E9%AB%98%E6%B8%85%E5%A3%81%E7%BA%B8&amp;spm=1018.2226.3001.4187</span></span><br></pre></td></tr></tbody></table></figure>
+<p>就只记得这些，在想起来再补充吧</p>
+]]></content>
+  </entry>
+  <entry>
     <title>markdown使用手册</title>
     <url>/2022/02/16/markdown/</url>
     <content><![CDATA[<h1>Markdown使用说明</h1>
@@ -119,50 +162,6 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
 <h2 id="字体">字体</h2>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">*斜体* **加粗** `<span class="built_in">printf</span>()` :smile H~<span class="number">2</span>~O x^<span class="number">2</span>^ ==highlight==</span><br></pre></td></tr></tbody></table></figure>
 <p><em>斜体</em> <strong>加粗</strong> <code>printf()</code> :smile H~2~O x^2^ ==highlight==</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>基于hexo和butterfly搭建于github的Blog</title>
-    <url>/2022/02/16/CreateBlog/</url>
-    <content><![CDATA[<h1>基于hexo和butterfly搭建于github的Blog</h1>
-<p>照搬下文，如果遇到不会就参考以下视频<br>
-<a href="https://www.bilibili.com/video/BV1mU4y1j72n?spm_id_from=333.1007.top_right_bar_window_custom_collection.content.click">https://www.bilibili.com/video/BV1mU4y1j72n?spm_id_from=333.1007.top_right_bar_window_custom_collection.content.click</a></p>
-<h2 id="node-js环境配置">node.js环境配置</h2>
-<p>由hexo编写语言所决定，node.js突破了js只能写前端的障碍，实现了后端的编写<br>
-首先要到官网下载对应系统的安装包，下载后下一步下一步就行了，就是要注意环境变量要配上去，下完后不要随意该文件夹名字环境变量容易找不到路径<br>
-官网:<a href="https://nodejs.org/zh-cn/download/">https://nodejs.org/zh-cn/download/</a></p>
-<h2 id="下载git并且拥有一个github账号">下载git并且拥有一个github账号</h2>
-<p>github仓库容量有限，省着点用，能不用大图片就不用，能省一笔算一笔，可以用url链接图片只要对方不倒台，就能一直用用git指令拉代码。<br>
-github官网:<a href="https://github.com/">https://github.com/</a><br>
-git官网:<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
-<h2 id="下载hexo">下载hexo</h2>
-<p>用win+r的命令行敲，在命令窗口用指令安装，还能直接安装全局变量，就不用上官网上下载了</p>
-<h2 id="下载butterfly">下载butterfly</h2>
-<p>用管理员身份打开git push进入选中要指定为存储Blog的文件夹进行hexo配置，也要用git进行github登录，在用npm install命令安装一些必要的包，再git clone Butterfly的主题，主题拉出来了按照官网手册进行一系列配置。<br>
-hexo官网:<a href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a><br>
-butterfly官网:<a href="https://butterfly.js.org/">https://butterfly.js.org/</a><br>
-这butterfly貌似对手机访问不友好啊，PC看着那么漂亮，Android看着布局有问题，照着慢慢配就是了。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>资源整理合计(持续更新)</title>
-    <url>/2022/02/16/ResourceCollection/</url>
-    <content><![CDATA[<h1>资源整理合计(持续更新)</h1>
-<h3 id="电影，动漫，音乐…">电影，动漫，音乐…</h3>
-<ul>
-<li><a href="https://axutongxue.com/">https://axutongxue.com/</a><br>
-酷狗概念版会员免费，歌单随便下载</li>
-</ul>
-<h3 id="Science-Internet">Science Internet</h3>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">https:<span class="comment">//ikuuu.co/auth/login</span></span><br></pre></td></tr></tbody></table></figure>
-<p>白嫖日本站点，三月不登陆账号会注销，会有邮件提示</p>
-<h3 id="图标库">图标库</h3>
-<ul>
-<li><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></li>
-</ul>
-<h3 id="高清壁纸，图片素材库">高清壁纸，图片素材库</h3>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">https:<span class="comment">//blog.csdn.net/weixin_43852094/article/details/112276601?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522164502163416780271557379%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=164502163416780271557379&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-112276601.first_rank_v2_pc_rank_v29&amp;utm_term=%E9%AB%98%E6%B8%85%E5%A3%81%E7%BA%B8&amp;spm=1018.2226.3001.4187</span></span><br></pre></td></tr></tbody></table></figure>
-<p>就只记得这些，在想起来再补充吧</p>
 ]]></content>
   </entry>
 </search>
