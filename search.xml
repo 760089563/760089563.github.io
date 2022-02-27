@@ -47,6 +47,120 @@ butterfly官网:<a href="https://butterfly.js.org/%E7%85%A7%E7%9D%80%E6%85%A2%E6
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="type">int</span> preOrder[MAXN];</span><br><span class="line"><span class="type">int</span> inOrder[MAXN];</span><br><span class="line">Node* <span class="title function_">CreateBST</span><span class="params">(<span class="type">int</span> preLeft,<span class="type">int</span> preRight,<span class="type">int</span> inLeft,<span class="type">int</span> inRight)</span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">if</span>(preLeft&gt;preRight)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    }</span><br><span class="line">    Node* root=new Node();</span><br><span class="line">    root-&gt;data=preOrder[preLeft];</span><br><span class="line">    <span class="type">int</span> k;</span><br><span class="line">    <span class="keyword">for</span>(k=inLeft;k&lt;=inRight;k++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span>(inOrer[k]==preOrder[preLeft])</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="type">int</span> numLeft=k-inLeft;</span><br><span class="line">    <span class="comment">//以下由与上面有所变化  根据前序与后序的特性</span></span><br><span class="line">    root-&gt;left=CreateBST(postLeft+<span class="number">1</span>,postLeft+num,inLeft,k<span class="number">-1</span>);</span><br><span class="line">    root-&gt;right=CreateBST(postLeft+num+<span class="number">1</span>,postRight,k+<span class="number">1</span>,inRight);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>]]></content>
   </entry>
   <entry>
+    <title>PostEnglish</title>
+    <url>/2022/02/25/PostEnglish/</url>
+    <content><![CDATA[<h1>英语自我介绍</h1>
+<h3 id="准备的学校">准备的学校</h3>
+<p>武汉纺织大学(Wuhan Textile University)<br>
+湖北大学(Hubei University)<br>
+华中师范大学五伦共(Central China Normal University)<br>
+北京信息科技大学(Beijing Information Science and Technology University)<br>
+湖北工业大学(Hubei University of Technology)</p>
+<h2 id="原文-需整改">原文(需整改)</h2>
+<p>Good morning/afternoon, my dear teachers. I am very glad to be here for your interview. My name is YKY. I am 24 years old. I am a local person and i love my hometown very much. I graduated from Wuhan Textile University and major in computer science. And now, I am trying my best for obtaining a key to      University.<br>
+Generally speaking, I am a hard-working student. I will try my best to finish it no matter how difficult it is. I am a person with great willpower. During the days preparing for the first examination, I insist on running every day, no matter what the weather was like.<br>
+Well, in my spare time, I like badminton and Chinese chess. Also, English is my favorite. I often practice oral English with movies and music. But I know my English is not good enough, I will continue studying.<br>
+That’s all, thank you for your attention.</p>
+<h1>可能问的问题</h1>
+<h4 id="介绍你的家乡">介绍你的家乡</h4>
+<p>我是本地人，所以我的家乡就是武汉。武汉是一个历史悠久，风景宜人的地方。在这里有着江南三大名楼之首的黄鹤楼，也有着<br>
+I am a local person,so i</p>
+<h3 id="生活">生活</h3>
+<h4 id="介绍一条你熟悉的河流-生活">介绍一条你熟悉的河流(生活)</h4>
+<p>The Yangtze River is a familiar River to me. I am a native of Wuhan, so I am familiar with the Yangtze River. Compared with some other rivers, I often go to the Yangtze River. There is a bridge on the Yangtze River called the Yangtze River Bridge. It was the first bridge across the Yangtze River in China. It is also the longest river in China, running through 13 provinces. It is also the source of domestic water for some residents along the river. The Three Gorges project also makes use of the water resources of the Yangtze River and solves our power consumption problem. This is the Yangtze River that I am most familiar with.</p>
+<h4 id="介绍你的家乡-生活">介绍你的家乡(生活)</h4>
+<p>I am a local person, so I simply introduce my hometown Wuhan. It’s a long history’s place. There are famous Yellow Crane Tower, which is the first of the three famous towers in south China. And Wuchang Uprising fired the first shot of the 1911 Revolution, which indirectly lead to the founding of new China. I am truly proud of my hometown. Also, there are many scenic spots, such as the East Lake, the Haze waring and the Yangtze River Bridge. And Wuhan is located in the main thoroughfare of nine provinces, so it’s very convenient to travel.</p>
+<h4 id="遇到困难时你是单独解决还是寻求帮助？-生活">遇到困难时你是单独解决还是寻求帮助？(生活)</h4>
+<h4 id="你如何释放压力-生活">你如何释放压力(生活)</h4>
+<p>In my mind, some stress is normal. I will try my best to solve pressure when I feel it. I will choose to run on the playground when I feel stressed or failed. That maybe make me tried. But I will feel calmer and think more clearly about some difficult problems. Or I will talk with my friends to find some solutions and experiences. In the face of some long-term and heavy problems, I will plan them and move forward step by step. This will not only not make me feel stressed, but also make me more self-motivated.</p>
+<h3 id="规划">规划</h3>
+<h4 id="你的梦想是什么-规划">你的梦想是什么(规划)</h4>
+<h4 id="你的理想是什么？-规划">你的理想是什么？(规划)</h4>
+<h4 id="未来最想做的工作，说一下细节和原因-规划">未来最想做的工作，说一下细节和原因(规划)</h4>
+<p>My dream is to be an engineer. I think engineer is a job with technology and knowledge, which is my most desired job. Have the ability to complete some major projects and contribute to the country. In the future, I will fully learn relevant professional knowledge, carry out project practice and obtain a series of certificates. Improve my knowledge level in all aspects to meet the current social needs. Make friends with some outstanding talents in related fields. Maybe one day I will have my own enterprise and make my own brand project.</p>
+<h4 id="你打算怎么度过你的研究生生活-规划">你打算怎么度过你的研究生生活(规划)</h4>
+<p>In my mind, I wish my postgraduate life be busy. I want to participate in more programming competitions to make up for my undergraduate experience. And I will try my best to obtain more useful certificates to make my postgraduate life more meaningful. Without affecting my studies, take more exercise and have a good body. In the process of continuous learning and experience, I need to clarify the direction, find further goals and make more excellent friends. The above is my plan for my next postgraduate life.</p>
+<h4 id="你对未来的计划-规划">你对未来的计划(规划)</h4>
+<p>From my perspective, my future depends on my efforts now. So I will constantly improve all aspects of myself. I want to participate in more programming competitions to make up for my undergraduate experience. And I will try my best to obtain more useful certificates to make my postgraduate life more meaningful. Without affecting my studies, take more exercise and have a good body. In the process of continuous learning and experience, I need to clarify the direction, find further goals and make more excellent friends. That all is my plan.</p>
+<h4 id="你短期的目标规划是什么-规划">你短期的目标规划是什么(规划)</h4>
+<p>In my mind, my short-term goal is to learn English well. Because it is very important for my next postgraduate life. Then I will improve my programming ability to better adapt to future learning.<br>
+That is my short term goal.</p>
+<h3 id="经历">经历</h3>
+<h4 id="描述一下你用手机进行学习的经历-经历">描述一下你用手机进行学习的经历(经历)</h4>
+<h4 id="描述一次你经历过的糟糕的服务-经历">描述一次你经历过的糟糕的服务(经历)</h4>
+<p>在之前疫情的时候，我们都采取线上上课的方式。学生们采用手机或者其他工具进行线上学习。有段时间，我采用手机进行线上学习。上课的时候还好，但是要进行作业编写的时候就是最麻烦的时候，由于当时电脑不在身边只能与老师说明情况。之后电脑回来后，一次性把所有的作业都补充上去了。不过不是很影响课程进度。</p>
+<h4 id="描述一个给你自信的人-经历">描述一个给你自信的人(经历)</h4>
+<h4 id="说一个对你人生当中最重要的人-经历">说一个对你人生当中最重要的人(经历)</h4>
+<p>在初中的时候，我还是很内向直到我结识了我的同学。他是一个很外向，开朗且幽默的人。在他的引导之下，我也开始接受其他人，与别人进行交流。在与更多优秀的人结识后，学习到了许多。也造就了我。他的幽默也影响了我。确实幽默可以让别人开朗，同时也会让人更加自信。</p>
+<h4 id="介绍一下你的一次旅行经历-经历">介绍一下你的一次旅行经历(经历)</h4>
+<h4 id="说一段你最难忘的经历-经历">说一段你最难忘的经历(经历)</h4>
+<p>During the summer vacation of my sophomore year, I went to Fuzhou for a technical training, which lasted two weeks. Where I met a group of people who are quite excellent. Everyone is very friendly and I like them very much, but time is always short, and then I left. In fact, I have been thinking about my experience for a long time after I left. Because the experience of this period of time and the people I make friends inspire me all the time. Maybe it is because of this that I have a strong willpower. It is precisely because of this willpower that has influenced me all the way until now.</p>
+<h4 id="特殊的机会-经历">特殊的机会(经历)</h4>
+<h4 id="大学最美好的回忆是什么-经历">大学最美好的回忆是什么(经历)</h4>
+<h4 id="你印象最深刻的一件事-经历">你印象最深刻的一件事(经历)</h4>
+<p>What impressed me most was that I got my first programming job. During my winter and summer internship, I got my first job on programming. Although it’s just a temp job, it still gives me great confidence. Because someone finally recognized me. I had never obtained a job related to my major before. Until this job, I opened a new understanding of my major in computer science. I also met many excellent people in this place, and learned a lot of skills and communication skills from them. My boss and colleagues take care of me and don’t mind if I don’t know anything. It was also a period of time here that made me set my goal of going to graduate school. Because most of them are postgraduate.</p>
+<h4 id="谈一谈的你的大学生活-经历">谈一谈的你的大学生活(经历)</h4>
+<p>My university is relatively full, but it is still a pity. I got some certificates and took part in some internships in college. But I have hardly participated in any professional competition. This is the regret of my whole university. I didn’t compete with others in professional skills. In my spare time, I often go to study and improve my programming ability. In the future, I will fully absorb the above problems, make full use of my free time, actively participate in various competitions, and make a good plan for the future life.</p>
+<h3 id="爱好">爱好</h3>
+<h4 id="你有喜欢的户外运动吗，简单介绍一下-爱好">你有喜欢的户外运动吗，简单介绍一下(爱好)</h4>
+<h4 id="你有啥爱好-爱好">你有啥爱好(爱好)</h4>
+<p>I like many outdoor sports, such as basketball, badminton and table tennis. But the only thing I’ve been insisting on is running. Long distance running for a period of time every day is helpful for my breathing. This can make me feel comfortable and clear. Daily persistence can make my willpower stronger, make my body healthier and make my living habits more regular. Strong willpower and healthy body in turn make my sports ability to a higher level.</p>
+<h3 id="观点">观点</h3>
+<h4 id="你如何看待合作-观点">你如何看待合作(观点)</h4>
+<p>I think cooperation is a nice behavior. One’s ability is limit. Team work can let us be more outstanding. During the cooperation, everyone will grow. Can produce more and more perfect works. One person’s evaluation is limited, but multiple people can improve a work. So in my mind, working with others is a funny behavior.</p>
+<h4 id="你认为支付宝能取代纸币吗-观点">你认为支付宝能取代纸币吗(观点)</h4>
+<p>我并不认为支付宝能取代纸币<br>
+I think Alipay can’t take place paper money. Because the Internet isn’t enough safe. And it can’t work without electronic power. But paper money still exists. It is physical. Though now the paper money is inconvenient, it can’t be replaced recently. In the future, when we not need money, the paper money perhaps be replaced by another way.</p>
+<h4 id="你如何看待医患纠纷-观点">你如何看待医患纠纷(观点)</h4>
+<p>I think medical disputes is very serious. The relationship between doctors and patients should be a cooperative relation. Doctors try their best to save their patients, though treatment fees maybe is too expensive. Perhaps patients can’t be cured perfect. Family of patients should not hate doctors. Everyone did their best.</p>
+<h4 id="学生应该多花时间上网学习还是多看书学习-观点">学生应该多花时间上网学习还是多看书学习(观点)</h4>
+<p>Students should spend more time to learn from books. I like learning from book. Though the book is less convenient than network, the book is physical. It always exits even without electronic power. And I frequently working with computer, so I would like learning from book than network.</p>
+<h4 id="英雄，说说你对英雄的理解-观点">英雄，说说你对英雄的理解(观点)</h4>
+<p>The hero is a sacred identity. Everyone could be a hero. There are many ways to be a hero, such as help others, sacrifice and contribution. All of us are heroes or all of us are followers of heroes. Heroes should be a group of people who serve the public, not individualism</p>
+<h4 id="按小时计费的租房制度，你有什么看法，说出优缺点-观点">按小时计费的租房制度，你有什么看法，说出优缺点(观点)</h4>
+<p>Hourly rental system is quite flexible. From my perspective, I think it is convenient for someone need it. But for others who want to rental long time, it is too expensive. When house is our need, we often not take care of how many hours we rental, we just take care of which day we can live.</p>
+<h4 id="你认为一个老师如何能够教出一个智慧的学生-观点">你认为一个老师如何能够教出一个智慧的学生(观点)</h4>
+<p>I think a good teacher should give students a direction. First the teacher perhaps gives some stress to students. Because stressed maybe let students learning more knowledge than nothing any stress. Of course, students also should cooperate with teachers. The teacher need give enough free time to students. We need some free time.</p>
+<h4 id="介绍一个你和朋友们一起做出的成就是什么？-经历">介绍一个你和朋友们一起做出的成就是什么？(经历)</h4>
+<p>I worked with my classmates to complete an NLP project. I am responsible for achieving the UI interface and obtaining a series of experimental data. He is responsible for some core algorithms. He is the key of the project. And I try my best to cooperate with him. Of course, my ability is far inferior to him. We have all grown in this project.</p>
+<h4 id="你如何看待早到、迟到了如何处理-观点">你如何看待早到、迟到了如何处理(观点)</h4>
+<p>I don’t think it’s important to arrive early, but it’s very serious to arrive late. Early arrival shows that this person has the principle of time. It should be encouraged. And late arrival shows that this person may have forgotten the time or other some important things,. But this behavior should be criticized</p>
+<h4 id="你认为大学生应该结婚吗-观点">你认为大学生应该结婚吗(观点)</h4>
+<p>I think love and marriage must be decisions that both sides are alike and will not regret. If you can have a worthy spouse during college, of course, it is the best. A person is fragile, but with personal support, there will certainly be a stronger driving force. Of course, if you think this marriage is a burden, you shouldn’t be together in the beginning. So I think if we can get married, then the relationship between the two people naturally doesn’t have to worry too much. So I support it, but if I just want to get married this morning, I don’t support the idea of marriage, because it’s not good for both sides.</p>
+<h4 id="遇到困难怎么办-观点">遇到困难怎么办(观点)</h4>
+<p>Difficulties will certainly be encountered. If I encounter some troublesome things or thorny problems in the past, I will first try to solve them. If I don’t have any clue, I maybe give up directly. But now I will try all kinds of methods to solve and deal with it. After all, every difficulty is a growth. Sooner or later, I will experience it. If I can’t escape, I’d better face it formally and try my best to overcome it. Or communicate more with friends and teachers, discuss and study various problems, and explore the direction of thinking.</p>
+<h4 id="你对机器人是如何理解的谈谈你对机器人的理解-观点">你对机器人是如何理解的谈谈你对机器人的理解(观点)</h4>
+<p>From my perspective, robot is a comprehensive technical product. Its technology includes machinery, automation and computer. With the development of the age, the requirements of robots are becoming higher and higher, and the functions that robots can achieve are becoming higher and higher. In some directions, robots that can carry out some high-precision operations not only have high mechanical requirements, but also need some knowledge of other specialties for integration. Therefore, the development degree of robot represents the integration degree of various disciplines. It may not represent the development degree of various fields, but it shows the application degree of various fields.</p>
+<h4 id="你如何当代大学生考试作弊和论文作假有什么看法-观点">你如何当代大学生考试作弊和论文作假有什么看法(观点)</h4>
+<p>This is a very bad phenomenon. I think cheating in exams is unfair to others and undermines personal integrity. Paper fraud is even more serious, which is related to the development of a field. Maybe it can make people graduate, but it is an insult to the authority of the professional field. We need to resist this kind of behavior and not opportunistic at any time. Only through real experience can we really have it</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>资源整理合集(持续更新)</title>
+    <url>/2022/02/16/ResourceCollection/</url>
+    <content><![CDATA[<h1>资源整理合计(持续更新)</h1>
+<h3 id="电影，动漫，音乐…">电影，动漫，音乐…</h3>
+<ul>
+<li><a href="https://axutongxue.com/">https://axutongxue.com/</a><br>
+酷狗概念版会员免费，歌单随便下载</li>
+</ul>
+<h3 id="Science-Internet">Science Internet</h3>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">https:<span class="comment">//ikuuu.co/auth/login</span></span><br></pre></td></tr></tbody></table></figure>
+<p>白嫖日本站点，三月不登陆账号会注销，会有邮件提示</p>
+<h3 id="图标库">图标库</h3>
+<ul>
+<li><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></li>
+</ul>
+<h3 id="高清壁纸，图片素材库">高清壁纸，图片素材库</h3>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">https:<span class="comment">//blog.csdn.net/weixin_43852094/article/details/112276601?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522164502163416780271557379%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=164502163416780271557379&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-112276601.first_rank_v2_pc_rank_v29&amp;utm_term=%E9%AB%98%E6%B8%85%E5%A3%81%E7%BA%B8&amp;spm=1018.2226.3001.4187</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="小木虫">小木虫</h3>
+<ul>
+<li><a href="http://muchong.com/bbs/kaoyan.php">http://muchong.com/bbs/kaoyan.php</a></li>
+</ul>
+<p>就只记得这些，在想起来再补充吧</p>
+]]></content>
+  </entry>
+  <entry>
     <title>markdown使用手册</title>
     <url>/2022/02/16/markdown/</url>
     <content><![CDATA[<h1>Markdown使用说明</h1>
@@ -165,27 +279,6 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
 <h2 id="字体">字体</h2>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">*斜体* **加粗** `<span class="built_in">printf</span>()` :smile H~<span class="number">2</span>~O x^<span class="number">2</span>^ ==highlight==</span><br></pre></td></tr></tbody></table></figure>
 <p><em>斜体</em> <strong>加粗</strong> <code>printf()</code> :smile H~2~O x^2^ ==highlight==</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>资源整理合集(持续更新)</title>
-    <url>/2022/02/16/ResourceCollection/</url>
-    <content><![CDATA[<h1>资源整理合计(持续更新)</h1>
-<h3 id="电影，动漫，音乐…">电影，动漫，音乐…</h3>
-<ul>
-<li><a href="https://axutongxue.com/">https://axutongxue.com/</a><br>
-酷狗概念版会员免费，歌单随便下载</li>
-</ul>
-<h3 id="Science-Internet">Science Internet</h3>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">https:<span class="comment">//ikuuu.co/auth/login</span></span><br></pre></td></tr></tbody></table></figure>
-<p>白嫖日本站点，三月不登陆账号会注销，会有邮件提示</p>
-<h3 id="图标库">图标库</h3>
-<ul>
-<li><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></li>
-</ul>
-<h3 id="高清壁纸，图片素材库">高清壁纸，图片素材库</h3>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">https:<span class="comment">//blog.csdn.net/weixin_43852094/article/details/112276601?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522164502163416780271557379%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=164502163416780271557379&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-112276601.first_rank_v2_pc_rank_v29&amp;utm_term=%E9%AB%98%E6%B8%85%E5%A3%81%E7%BA%B8&amp;spm=1018.2226.3001.4187</span></span><br></pre></td></tr></tbody></table></figure>
-<p>就只记得这些，在想起来再补充吧</p>
 ]]></content>
   </entry>
 </search>
