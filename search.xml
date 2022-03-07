@@ -1,6 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>DPAlgorithm</title>
+    <url>/2022/02/28/DPAlgorithm/</url>
+    <content><![CDATA[<h1>DP常见式</h1>
+<p>算法笔记 DP章节</p>
+<h2 id="最大连续子序列">最大连续子序列</h2>
+<p>给定序列: -2,11,-4,13,-5,-2</p>
+<blockquote>
+<p>A[]={-2,11,-4,13,-5,-2}<br>
+dp[0]=-1,<br>
+dp[1]=11,<br>
+dp[2]=7(11+(-4)=7)<br>
+dp[i]=max(dp[i],dp[i-1]+A[i])</p>
+</blockquote>
+<p>从前往后，如果前面加上当前索引的值小于当前索引的值，就取最大的那一个</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">//边界</span></span><br><span class="line">dp[<span class="number">0</span>]=A[<span class="number">0</span>]</span><br><span class="line">k=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">{</span><br><span class="line">    dp[i]=max(A[i],dp[i<span class="number">-1</span>]+A[i]);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="最长不降子序列">最长不降子序列</h2>
+<p>给定序列: 1,2,3,-1,-2,7,9</p>
+<blockquote>
+<p>A[]={1,2,3,-1,-2,7,9}<br>
+dp[i]=max{1,dp[j]+1}</p>
+</blockquote>
+<p>对应代码</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">fill(dp,dp+n,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">{</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;i;j++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span>(A[i]&gt;=A[j])<span class="comment">//后面要大于前面</span></span><br><span class="line">        {</span><br><span class="line">            dp[i]=max(<span class="number">1</span>,dp[j]+<span class="number">1</span>);<span class="comment">//取最大值 记录最长不降长度</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="最长公共子序列">最长公共子序列</h2>
+<p>给定两字符串:</p>
+<ul>
+<li>sadstory</li>
+<li>adminsorry</li>
+</ul>
+<blockquote>
+<p>A[]={sadstory}<br>
+B[]={adminsorry}<br>
+dp[i][j]={dp[i-1][j-1]+1,A[i]==B[j]},<br>
+{max(dp[i-1][j-1],dp[i][j-1]),A[i]!=B[j]}</p>
+</blockquote>
+<p>对应代码</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="type">char</span> A[MAXN],B[MAXN];</span><br><span class="line"><span class="comment">//从位置1开始存储</span></span><br><span class="line">gets(A+<span class="number">1</span>);</span><br><span class="line">gets(B+<span class="number">1</span>);</span><br><span class="line"><span class="comment">//记录长度</span></span><br><span class="line"><span class="type">int</span> lenA=<span class="built_in">strlen</span>(A+<span class="number">1</span>);</span><br><span class="line"><span class="type">int</span> lenB=<span class="built_in">strlen</span>(B+<span class="number">1</span>);</span><br><span class="line"><span class="comment">//初始化边界</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=lenA;i++)</span><br><span class="line">{</span><br><span class="line">    dp[i][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;=lenB;j++)</span><br><span class="line">{</span><br><span class="line">    dp[<span class="number">0</span>]j]=<span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=lenA;i++)</span><br><span class="line">{</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=lenB;j++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span>(A[i]==B[j])</span><br><span class="line">        {</span><br><span class="line">            dp[i][j]=dp[i<span class="number">-1</span>][j<span class="number">-1</span>]+<span class="number">1</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        {</span><br><span class="line">            dp[i][j]=max{dp[i<span class="number">-1</span>][j],dp[i][j<span class="number">-1</span>]};<span class="comment">//继承A最长或者B最长  不连续的</span></span><br><span class="line">            <span class="comment">//如果要记录连续的话</span></span><br><span class="line">            <span class="comment">//dp[i][j]=0;  长度重置</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="最长回文串">最长回文串</h2>
+<p>给定字符串: PATZJUJZTACCBCC</p>
+<blockquote>
+<p>s[]={PATZJUJZTACCBCC}<br>
+dp[i][j]={dp[i+1][j-1],s[i]==s[j]},<br>
+{0,s[i]!=s[j]}</p>
+</blockquote>
+<p>对应代码</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line"><span class="type">int</span> len=s.length(),ans=<span class="number">1</span>;<span class="comment">//ans记录回文串长度</span></span><br><span class="line">fill(dp,dp+MAXN*MAXN,<span class="number">0</span>);<span class="comment">//初始值为0</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">{</span><br><span class="line">    dp[i][i]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;len)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span>(s[i]==s[i+<span class="number">1</span>])<span class="comment">//从第i个数到i+1个数都相等</span></span><br><span class="line">        {</span><br><span class="line">            dp[i][i+<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">            ans=<span class="number">2</span>;<span class="comment">//有两个字符相等 回文串长度为2</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//进行状态转移方程</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> L=<span class="number">3</span>;L&lt;=len;L++)<span class="comment">//长度遍历</span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i+L<span class="number">-1</span>&lt;len;i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="type">int</span> j=i+L<span class="number">-1</span>;<span class="comment">//左边的回文串位置</span></span><br><span class="line">        <span class="keyword">if</span>(s[i]==s[j]&amp;&amp;dp[i+<span class="number">1</span>][j<span class="number">-1</span>]==<span class="number">1</span>)<span class="comment">//从i+1到j-1均为连续回文串</span></span><br><span class="line">        {</span><br><span class="line">            dp[i][j]=<span class="number">1</span>;<span class="comment">//定为为回文串</span></span><br><span class="line">            ans=L;<span class="comment">//记录最长回文串长度</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="DAG-最长路">DAG 最长路</h2>
+<p>DAG 为有向无环图  拓扑排序 求最长路径</p>
+<blockquote>
+<p>dp[i]=max{dp[j]+length[i-&gt;j]|(i,j)属于E}</p>
+</blockquote>
+<p>代码实现</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">//边界初始化</span></span><br><span class="line">fill(dp,dp+MAXN,<span class="number">0</span>);</span><br><span class="line"><span class="comment">//递归方法</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">DP</span><span class="params">(<span class="type">int</span> i)</span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">if</span>(dp[i]&gt;<span class="number">0</span>)<span class="comment">//dp[i]有值  访问过</span></span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">return</span> dp[i];</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span>(G[i][j]!=INF)<span class="comment">//从i到j存在一条路径</span></span><br><span class="line">        {</span><br><span class="line">            dp[i]=max(dp[i],DP[j]+G[i][j]);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> dp[i];</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="01背包问题">01背包问题</h2>
+<p>n件物品，第i件重w[i],价值c[i],容量为v,每种物品只能放1件</p>
+<blockquote>
+<p>dp[i][v]=max{dp[i-1][v],dp[i-1][v-w[i]]+c[i]}<br>
+dp[i-1][v]            放第i件物品<br>
+dp[i-1][v-w[i]]+c[i]  放第i件物品<br>
+dp[0][v]=0 (0&lt;=v&lt;=V)</p>
+</blockquote>
+<p>代码实现</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;v;i++)</span><br><span class="line">{</span><br><span class="line">    dp[<span class="number">0</span>][i]=<span class="number">0</span>;<span class="comment">//边界</span></span><br><span class="line">}</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">{</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=w[i];j&lt;=v;j++)</span><br><span class="line">    {</span><br><span class="line">        dp[i][j]=max(dp[i<span class="number">-1</span>][j],dp[i<span class="number">-1</span>][j-w[i]]+c[i]);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="完全背包问题">完全背包问题</h2>
+<p>n件物品，第i件重w[i],价值c[i],容量为v,每种物品可以无限重复放</p>
+<blockquote>
+<p>dp[i][v]=max(dp[i-1][v],dp[i][v-w[i]]+c[i]);<br>
+dp[i-1][v]            不放第i个物品<br>
+dp[i][v-w[i]]+c[i]    放第i个物品<br>
+dp[0][v]=0 (0&lt;=v&lt;=V)</p>
+</blockquote>
+<p>代码实现</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;v;i++)</span><br><span class="line">{</span><br><span class="line">    dp[<span class="number">0</span>][i]=<span class="number">0</span>;<span class="comment">//边界</span></span><br><span class="line">}</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">{</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=w[i];j&lt;=v;j++)</span><br><span class="line">    {</span><br><span class="line">        dp[i][v]=max(dp[i<span class="number">-1</span>][v],dp[i][v-w[i]]+c[i]);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>还原二叉树PAT1020</title>
+    <url>/2022/02/20/PAT1020/</url>
+    <content><![CDATA[<h1>根据前序，中序，后序建立二叉树 PAT1020</h1>
+<p>前序-preOrder<br>
+中序-inOrder<br>
+后序-postOrder</p>
+<p>结构体定义</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">{</span></span><br><span class="line">public:</span><br><span class="line">    Node* left;</span><br><span class="line">    Node* right;</span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="中序-后序-二叉树">中序+后序=&gt;二叉树</h3>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="type">int</span> inOrder[MAXN];</span><br><span class="line"><span class="type">int</span> postOrder[MAXN];</span><br><span class="line">Node* <span class="title function_">CreateBST</span><span class="params">(<span class="type">int</span> postLeft,<span class="type">int</span> postRight,<span class="type">int</span> inLeft,<span class="type">int</span> inRight)</span></span><br><span class="line">{</span><br><span class="line">    <span class="comment">//已经从左边数到了右边</span></span><br><span class="line">    <span class="keyword">if</span>(postLeft&gt;postRight)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    }</span><br><span class="line">    Node* root=new Node();</span><br><span class="line">    <span class="comment">//后序序列最右边为中序的下一个节点</span></span><br><span class="line">    root-&gt;data=postOrder[postRight];</span><br><span class="line">    <span class="type">int</span> k;</span><br><span class="line">    <span class="keyword">for</span>(k=inLeft;k&lt;=inRight;k++)</span><br><span class="line">    {</span><br><span class="line">        <span class="comment">//找到在中序对应于后序最右边的位置</span></span><br><span class="line">        <span class="keyword">if</span>(inOrder[k]==postOrder[postRight])</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="type">int</span> numLeft=k-inLeft;<span class="comment">//中序距离左边的位置</span></span><br><span class="line">    <span class="comment">//对应的位置变化 往左边走 </span></span><br><span class="line">    root-&gt;left=CreateBST(postLeft,postLeft+numLeft<span class="number">-1</span>,inLeft,k<span class="number">-1</span>);</span><br><span class="line">    <span class="comment">//往右走</span></span><br><span class="line">    root-&gt;right=CreateBST(postLeft+numLeft,postRight<span class="number">-1</span>,k+<span class="number">1</span>,inRight);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="前序-中序-二叉树">前序+中序=&gt;二叉树</h3>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="type">int</span> preOrder[MAXN];</span><br><span class="line"><span class="type">int</span> inOrder[MAXN];</span><br><span class="line">Node* <span class="title function_">CreateBST</span><span class="params">(<span class="type">int</span> preLeft,<span class="type">int</span> preRight,<span class="type">int</span> inLeft,<span class="type">int</span> inRight)</span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">if</span>(preLeft&gt;preRight)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    }</span><br><span class="line">    Node* root=new Node();</span><br><span class="line">    root-&gt;data=preOrder[preLeft];</span><br><span class="line">    <span class="type">int</span> k;</span><br><span class="line">    <span class="keyword">for</span>(k=inLeft;k&lt;=inRight;k++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span>(inOrer[k]==preOrder[preLeft])</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="type">int</span> numLeft=k-inLeft;</span><br><span class="line">    <span class="comment">//以下由与上面有所变化  根据前序与后序的特性</span></span><br><span class="line">    root-&gt;left=CreateBST(postLeft+<span class="number">1</span>,postLeft+num,inLeft,k<span class="number">-1</span>);</span><br><span class="line">    root-&gt;right=CreateBST(postLeft+num+<span class="number">1</span>,postRight,k+<span class="number">1</span>,inRight);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>]]></content>
+  </entry>
+  <entry>
     <title>素数打表PAT1013</title>
     <url>/2022/02/20/PAT1013/</url>
     <content><![CDATA[<h1>素数大表 PAT1013</h1>
@@ -33,21 +123,7 @@ butterfly官网:<a href="https://butterfly.js.org/%E7%85%A7%E7%9D%80%E6%85%A2%E6
 ]]></content>
   </entry>
   <entry>
-    <title>还原二叉树PAT1020</title>
-    <url>/2022/02/20/PAT1020/</url>
-    <content><![CDATA[<h1>根据前序，中序，后序建立二叉树 PAT1020</h1>
-<p>前序-preOrder<br>
-中序-inOrder<br>
-后序-postOrder</p>
-<p>结构体定义</p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">{</span></span><br><span class="line">public:</span><br><span class="line">    Node* left;</span><br><span class="line">    Node* right;</span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="中序-后序-二叉树">中序+后序=&gt;二叉树</h3>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="type">int</span> inOrder[MAXN];</span><br><span class="line"><span class="type">int</span> postOrder[MAXN];</span><br><span class="line">Node* <span class="title function_">CreateBST</span><span class="params">(<span class="type">int</span> postLeft,<span class="type">int</span> postRight,<span class="type">int</span> inLeft,<span class="type">int</span> inRight)</span></span><br><span class="line">{</span><br><span class="line">    <span class="comment">//已经从左边数到了右边</span></span><br><span class="line">    <span class="keyword">if</span>(postLeft&gt;postRight)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    }</span><br><span class="line">    Node* root=new Node();</span><br><span class="line">    <span class="comment">//后序序列最右边为中序的下一个节点</span></span><br><span class="line">    root-&gt;data=postOrder[postRight];</span><br><span class="line">    <span class="type">int</span> k;</span><br><span class="line">    <span class="keyword">for</span>(k=inLeft;k&lt;=inRight;k++)</span><br><span class="line">    {</span><br><span class="line">        <span class="comment">//找到在中序对应于后序最右边的位置</span></span><br><span class="line">        <span class="keyword">if</span>(inOrder[k]==postOrder[postRight])</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="type">int</span> numLeft=k-inLeft;<span class="comment">//中序距离左边的位置</span></span><br><span class="line">    <span class="comment">//对应的位置变化 往左边走 </span></span><br><span class="line">    root-&gt;left=CreateBST(postLeft,postLeft+numLeft<span class="number">-1</span>,inLeft,k<span class="number">-1</span>);</span><br><span class="line">    <span class="comment">//往右走</span></span><br><span class="line">    root-&gt;right=CreateBST(postLeft+numLeft,postRight<span class="number">-1</span>,k+<span class="number">1</span>,inRight);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="前序-中序-二叉树">前序+中序=&gt;二叉树</h3>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="type">int</span> preOrder[MAXN];</span><br><span class="line"><span class="type">int</span> inOrder[MAXN];</span><br><span class="line">Node* <span class="title function_">CreateBST</span><span class="params">(<span class="type">int</span> preLeft,<span class="type">int</span> preRight,<span class="type">int</span> inLeft,<span class="type">int</span> inRight)</span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">if</span>(preLeft&gt;preRight)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    }</span><br><span class="line">    Node* root=new Node();</span><br><span class="line">    root-&gt;data=preOrder[preLeft];</span><br><span class="line">    <span class="type">int</span> k;</span><br><span class="line">    <span class="keyword">for</span>(k=inLeft;k&lt;=inRight;k++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span>(inOrer[k]==preOrder[preLeft])</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="type">int</span> numLeft=k-inLeft;</span><br><span class="line">    <span class="comment">//以下由与上面有所变化  根据前序与后序的特性</span></span><br><span class="line">    root-&gt;left=CreateBST(postLeft+<span class="number">1</span>,postLeft+num,inLeft,k<span class="number">-1</span>);</span><br><span class="line">    root-&gt;right=CreateBST(postLeft+num+<span class="number">1</span>,postRight,k+<span class="number">1</span>,inRight);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>]]></content>
-  </entry>
-  <entry>
-    <title>PostEnglish</title>
+    <title>English Q&amp;A(myself)</title>
     <url>/2022/02/25/PostEnglish/</url>
     <content><![CDATA[<h1>英语自我介绍</h1>
 <h3 id="准备的学校">准备的学校</h3>
@@ -57,14 +133,10 @@ butterfly官网:<a href="https://butterfly.js.org/%E7%85%A7%E7%9D%80%E6%85%A2%E6
 北京信息科技大学(Beijing Information Science and Technology University)<br>
 湖北工业大学(Hubei University of Technology)</p>
 <h2 id="原文-需整改">原文(需整改)</h2>
-<p>Good morning/afternoon, my dear teachers. I am very glad to be here for your interview. My name is YKY. I am 24 years old. I am a local person and i love my hometown very much. I graduated from Wuhan Textile University and major in computer science. And now, I am trying my best for obtaining a key to      University.<br>
-Generally speaking, I am a hard-working student. I will try my best to finish it no matter how difficult it is. I am a person with great willpower. During the days preparing for the first examination, I insist on running every day, no matter what the weather was like.<br>
-Well, in my spare time, I like badminton and Chinese chess. Also, English is my favorite. I often practice oral English with movies and music. But I know my English is not good enough, I will continue studying.<br>
-That’s all, thank you for your attention.</p>
+<p>Good morning/afternoon, teachers and professors. I am very glad to be here for this interview. My name is YKY. I am 24 years old. I come from Wuhan, the capital of Hubei province. I graduated from Wuhan Textile University and major in computer science. And now, I am trying my best for obtaining a key to this University.<br>
+Generally speaking, I am a person with great willpower. During the days preparing for the first examination, I insist on running every day, no matter what the weather was like. Well, in my spare time, I have broad interest like many other younger. I like reading books about programming. Also I like programming, it makes my feel free. I can create anything in my world. And I like badminton, it is an easy spot compared with other spots.<br>
+I always believe that one will easily lag behind unless he keeps on learning. Of course, if I am given a chance to study technology in this famous university, I will stare no effort to master a good command of advance knowledge.</p>
 <h1>可能问的问题</h1>
-<h4 id="介绍你的家乡">介绍你的家乡</h4>
-<p>我是本地人，所以我的家乡就是武汉。武汉是一个历史悠久，风景宜人的地方。在这里有着江南三大名楼之首的黄鹤楼，也有着<br>
-I am a local person,so i</p>
 <h3 id="生活">生活</h3>
 <h4 id="介绍一条你熟悉的河流-生活">介绍一条你熟悉的河流(生活)</h4>
 <p>The Yangtze River is a familiar River to me. I am a native of Wuhan, so I am familiar with the Yangtze River. Compared with some other rivers, I often go to the Yangtze River. There is a bridge on the Yangtze River called the Yangtze River Bridge. It was the first bridge across the Yangtze River in China. It is also the longest river in China, running through 13 provinces. It is also the source of domestic water for some residents along the river. The Three Gorges project also makes use of the water resources of the Yangtze River and solves our power consumption problem. This is the Yangtze River that I am most familiar with.</p>
